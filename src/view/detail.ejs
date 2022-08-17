@@ -1,0 +1,24 @@
+<%- include('./header') %>
+    <title>Edit</title>
+    </head>
+
+    <body>
+        <%- include('./navbar') %>
+            <h1 class="center"> Details </h1>
+
+            <section class="detail-container">
+                <p>
+                    Nom, Prenom : <%= oneUser.name %>
+                </p>
+                <p>
+                    Ville : <%= oneUser.address.city %>
+                </p>
+
+
+                <a href="/"> Retour </a>
+            </section>
+
+
+    </body>
+
+    </html>

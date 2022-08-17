@@ -15,6 +15,10 @@ router.get("/", controler.getRenderUserData);
 
 router.get("/ajout", controler.getRenderAjout);
 router.get("/edit", controler.getRenderEdit);
+
+router.get("/detail/:id", controler.getRenderDetail);
 // router.get("/submitForm", controler.getFormSubmit);
+
+router.get("/delete/:id", controler.otherMethod);
 
 export {router};

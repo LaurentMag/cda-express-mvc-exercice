@@ -30,7 +30,13 @@ body {
 
 /* ------------------------------------------- */
 
+.center {
+  text-align: center;
+}
+
 button {
+  font-weight: 700;
+
   width: fit-content;
   height: 2rem;
 
@@ -40,10 +46,6 @@ button {
 
   border: none;
   border-radius: 0.5rem;
-}
-
-button:hover {
-  cursor: pointer;
 }
 
 button:active {
@@ -85,11 +87,14 @@ button:active {
   margin-block: 2rem;
 }
 
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/*  CARD */
 .card-frame {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 
   padding: 1rem;
 
@@ -107,11 +112,16 @@ button:active {
 }
 
 .card-frame p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 900;
 }
 
+.card-frame p:nth-of-type(1) {
+  height: 2.2rem;
+}
+
 .button-container {
+  justify-self: end;
   display: flex;
   gap: 1rem;
 }
@@ -123,4 +133,106 @@ button:active {
 .button-container button:nth-child(2) {
   background-color: rgb(211, 108, 108);
 }
+
 /* ------------------------------------------- */
+/* BOUTONS */
+
+.button-container a:nth-child(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+
+  width: fit-content;
+  height: 2rem;
+
+  padding-inline: 1rem;
+
+  background-color: rgb(145, 161, 195);
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.button-container a:nth-child(1):active {
+  transform: translateY(1.1%) scale(0.99);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+}
+
+.button-container a:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+
+  width: fit-content;
+  height: 2rem;
+
+  padding-inline: 1rem;
+
+  background-color: rgb(163, 195, 145);
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.button-container a:nth-child(1):active {
+  transform: translateY(1.1%) scale(0.99);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+}
+
+.button-container a:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+
+  width: fit-content;
+  height: 2rem;
+
+  padding-inline: 1rem;
+
+  background-color: rgb(195, 156, 145);
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.button-container a:nth-child(1):active {
+  transform: translateY(1.1%) scale(0.99);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+}
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
+.detail-container {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail-container p {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.detail-container a {
+  font-size: 2rem;
+}

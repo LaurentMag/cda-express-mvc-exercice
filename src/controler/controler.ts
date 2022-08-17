@@ -23,12 +23,33 @@ export class ExoControler {
     this._usersModel = usersModel;
   }
 
+  // LISTE
   getRenderUserData = async (req: Request, res: Response) => {
-    const data = await this._usersModel.fetchUserData().then((res: any) => res.json().then((res: any) => res));
-
+    const data = await this._usersModel
+      .fetchUserData()
+      .then((res: any) => res.json().then((res: any) => res))
+      .catch((err) => console.error(err));
     res.render("accueil", {usersData: data});
   };
 
+  // DETAILS
+  getRenderDetail = async (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    const oneUser = await this._usersModel.fetchUserId(id).then((res: any) => res.json().then((res: any) => res));
+    console.log(oneUser);
+
+    res.render("detail", {oneUser});
+  };
+
+  // DELETE USER
+  otherMethod = (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    this._usersModel.deleteUserById(id);
+
+    res.redirect("/");
+  };
+
+  // -----------------------------------------------------------
   getRenderAjout = (req: Request, res: Response) => {
     console.log("Ajouter");
     res.render("ajout");

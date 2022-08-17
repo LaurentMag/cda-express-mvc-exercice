@@ -17,4 +17,12 @@ export class UsersModel {
     // .then((res) => (this._data = res))
     // .then(() => this._data);
   };
+
+  fetchUserId = (id: string) => {
+    return fetch(`${URI}/${id}`);
+  };
+
+  deleteUserById = (id: string) => {
+    fetch(`${URI}/${id}`, {method: "DELETE"});
+  };
 }
