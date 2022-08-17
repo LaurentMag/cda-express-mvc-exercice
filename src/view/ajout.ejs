@@ -4,12 +4,24 @@
 
     <body>
         <%- include('./navbar') %>
-            <h1>page pour Ajouter</h1>
+            <h1 class="center">Ajouter un utilisateur</h1>
 
             <section class="section-add-card">
                 <form action="">
-                    <input type="text" name="inputName" id="">
-                    <button> ok </button>
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" name="nom" id="nom">
+                    </div>
+                    <div>
+                        <label for="prenom">Prenom</label>
+                        <input type="text" name="prenom" id="prenom">
+                    </div>
+                    <div>
+                        <label for="ville">Ville</label>
+                        <input type="text" name="ville" id="ville">
+                    </div>
+                    <a href="/adduser"></a>
+
                 </form>
             </section>
 

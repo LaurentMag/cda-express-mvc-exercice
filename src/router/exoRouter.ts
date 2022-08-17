@@ -14,7 +14,7 @@ const controler = new ExoControler(usersData);
 router.get("/", controler.getRenderUserData);
 
 router.get("/ajout", controler.getRenderAjout);
-router.get("/edit", controler.getRenderEdit);
+router.get("/edit/:id", controler.getRenderEdit);
 
 router.get("/detail/:id", controler.getRenderDetail);
 // router.get("/submitForm", controler.getFormSubmit);

@@ -12,7 +12,7 @@ body {
   justify-content: center;
   gap: 4rem;
 
-  background-color: rgb(111, 111, 152);
+  background-color: rgb(118, 130, 113);
 
   margin-block-end: 2rem;
 }
@@ -226,6 +226,12 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  width: min(40rem, 90%);
+
+  margin-inline: auto;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .detail-container p {
@@ -235,4 +241,33 @@ button:active {
 
 .detail-container a {
   font-size: 2rem;
+}
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
+.section-add-card {
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  width: min(20rem, 90%);
+}
+.section-add-card form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.section-add-card div {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-add-card input {
+  padding: 1rem;
 }
