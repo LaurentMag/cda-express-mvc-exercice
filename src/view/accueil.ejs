@@ -1,0 +1,33 @@
+<%- include('./header') %>
+    <title>Accueil</title>
+
+    </head>
+
+    <body>
+        <%- include('./navbar') %>
+            <h1>Accueil</h1>
+
+
+
+            <section class="card__container">
+                <% for ( let i=0; i < data.length; i++) { %>
+                    <article class="card-frame">
+                        <img src="/public/image/forest-fog-nature-winter-45222.jpeg" alt="">
+                        <p>
+                            <%= data[i] %>
+                        </p>
+                        <div class="button-container">
+                            <button> Details </button>
+                            <button> Delete </button>
+
+                        </div>
+
+                    </article>
+                    <% }%>
+
+            </section>
+
+
+    </body>
+
+    </html>

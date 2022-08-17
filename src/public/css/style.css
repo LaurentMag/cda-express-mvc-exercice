@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(210, 210, 214);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+
+  background-color: rgb(111, 111, 152);
+
+  margin-block-end: 2rem;
+}
+
+.navbar li {
+  padding: 2rem;
+  font-size: 2rem;
+  list-style-type: none;
+}
+
+.navbar li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* ------------------------------------------- */
+
+button {
+  width: fit-content;
+  height: 2rem;
+
+  padding-inline: 1rem;
+
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(1.1%) scale(0.99);
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+}
+
+/* ------------------------------------------- */
+/* ------------------------------------------- */
+
+.section-add-card {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.section-add-card input {
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+  border: 1px solid black;
+}
+.section-add-card input:focus {
+  outline: 1px solid black;
+}
+
+.section-add-card button {
+  background-color: rgb(68, 67, 67);
+  color: white;
+}
+
+/* ------------------------------------------- */
+.card__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  margin-block: 2rem;
+}
+
+.card-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+
+  width: min(20rem, 90%);
+
+  border-radius: 0.5rem;
+
+  background-color: rgb(233, 233, 233);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-frame img {
+  width: min(20rem, 90%);
+  border-radius: 0.5rem;
+}
+
+.card-frame p {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-container button:nth-child(1) {
+  background-color: rgb(163, 195, 145);
+}
+
+.button-container button:nth-child(2) {
+  background-color: rgb(211, 108, 108);
+}
+/* ------------------------------------------- */

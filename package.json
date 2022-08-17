@@ -1,0 +1,22 @@
+{
+  "name": "expressjs-mvc-exercice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && node ./dist/index.js",
+    "start:dev": "ts-node-dev ./src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "ts-node-dev": "^2.0.0"
+  }
+}
