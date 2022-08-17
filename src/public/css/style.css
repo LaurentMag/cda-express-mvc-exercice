@@ -137,7 +137,7 @@ button:active {
 /* ------------------------------------------- */
 /* BOUTONS */
 
-.button-container a:nth-child(1) {
+.link-as-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,72 +147,34 @@ button:active {
   text-decoration: none;
 
   width: fit-content;
-  height: 2rem;
+  height: 2.5rem;
 
-  padding-inline: 1rem;
+  padding-inline: 1.2rem;
 
-  background-color: rgb(145, 161, 195);
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
-
-  border: none;
-  border-radius: 0.5rem;
-}
-
-.button-container a:nth-child(1):active {
-  transform: translateY(1.1%) scale(0.99);
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
-}
-
-.button-container a:nth-child(2) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: black;
-  font-weight: 700;
-  text-decoration: none;
-
-  width: fit-content;
-  height: 2rem;
-
-  padding-inline: 1rem;
-
-  background-color: rgb(163, 195, 145);
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.373);
 
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.2rem;
 }
 
-.button-container a:nth-child(1):active {
+.link-as-button:active {
   transform: translateY(1.1%) scale(0.99);
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.373);
 }
 
-.button-container a:nth-child(3) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: black;
-  font-weight: 700;
-  text-decoration: none;
-
-  width: fit-content;
-  height: 2rem;
-
-  padding-inline: 1rem;
-
-  background-color: rgb(195, 156, 145);
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.373);
-
-  border: none;
-  border-radius: 0.5rem;
+.color-detail {
+  color: white;
+  background-color: rgb(119, 121, 127);
 }
 
-.button-container a:nth-child(1):active {
-  transform: translateY(1.1%) scale(0.99);
-  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.373);
+.color-edit {
+  color: white;
+  background-color: rgb(81, 134, 43);
+}
+
+.color-delete {
+  color: white;
+  background-color: rgb(188, 68, 68);
 }
 
 /* ------------------------------------------- */

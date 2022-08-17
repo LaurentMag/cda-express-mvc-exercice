@@ -1,29 +1,24 @@
-import {Request, Response} from "express";
-// import {ExoModel} from "../model/model";
-
+import express, {Request, Response, NextFunction} from "express";
+import bodyParser from "body-parser";
+//
 import {UsersModel} from "../model/userModel";
 
+// MIDDLEWARE TO MANAGE FORM
+const app = express();
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(express.urlencoded({extended: false}));
+
+// -----------------------------------------------------------
+// -----------------------------------------------------------
 export class ExoControler {
-  // private _model: ExoModel;
-
-  // constructor(model: ExoModel) {
-  //   this._model = model;
-  // }
-
-  // getRenderData = (req: Request, res: Response) => {
-  //   console.log("c'est l'accueil");
-  //   res.render("accueil", {data: this._model.sendData()});
-  // };
-
-  // -----------------------------------------------------------
-
   private _usersModel: UsersModel;
 
   constructor(usersModel: UsersModel) {
     this._usersModel = usersModel;
   }
 
-  // LISTE
+  // DISPLAY LIST HOMEPAGE
   getRenderUserData = async (req: Request, res: Response) => {
     const data = await this._usersModel
       .fetchUserData()
@@ -32,15 +27,28 @@ export class ExoControler {
     res.render("accueil", {usersData: data});
   };
 
-  // DETAILS
+  // DISPLAY DETAIL IN DETAIL PAGE
   getRenderDetail = async (req: Request, res: Response) => {
     const id: string = req.params.id;
     const oneUser = await this._usersModel.fetchUserId(id).then((res: any) => res.json().then((res: any) => res));
-    console.log(oneUser);
 
     res.render("detail", {oneUser});
   };
 
+  // -----------------------------------------------------------
+  // AJOUT USER PAGE
+  getRenderAjout = (req: Request, res: Response) => {
+    res.render("ajout");
+  };
+
+  // EDIT PAGE
+  getRenderEdit = async (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    const userToEdit = await this._usersModel.fetchUserId(id).then((res) => res.json().then((res) => res));
+    res.render("edit", {id});
+  };
+
+  // -----------------------------------------------------------
   // DELETE USER
   otherMethod = (req: Request, res: Response) => {
     const id: string = req.params.id;
@@ -49,14 +57,27 @@ export class ExoControler {
     res.redirect("/");
   };
 
-  // -----------------------------------------------------------
-  getRenderAjout = (req: Request, res: Response) => {
-    console.log("Ajouter");
-    res.render("ajout");
+  // SUBMITED DATA. DONT WORK HERE.. IN INDEX YES
+  postSubmitAddFormInfo = (req: Request, res: Response) => {
+    const {nom, prenom, ville} = req.body;
+    const newUserToAdd: any = {name: `${nom} ${prenom}`, address: {city: ville}};
+
+    this._usersModel.addUser(newUserToAdd);
+
+    res.redirect("/");
   };
 
-  getRenderEdit = (req: Request, res: Response) => {
-    console.log("edition");
-    res.render("edit");
+  // USER INFORMATION EDITION
+  editUserInfo = (req: Request, res: Response) => {
+    const id: string = req.params.id;
+    const {nom, prenom, ville} = req.body;
+    const dataToEdit: any = {id: id, name: `${nom} ${prenom}`, address: {city: ville}};
+
+    this._usersModel.updateUser(id, dataToEdit);
+    res.redirect("/");
+
+    // DEBUG
+    // console.log("edit");
+    // res.send("ok");
   };
 }

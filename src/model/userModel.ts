@@ -25,4 +25,20 @@ export class UsersModel {
   deleteUserById = (id: string) => {
     fetch(`${URI}/${id}`, {method: "DELETE"});
   };
+
+  addUser = (data: any) => {
+    fetch(`${URI}`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {"content-Type": "application/json"},
+    });
+  };
+
+  updateUser = (id: string, data: any) => {
+    return fetch(`${URI}/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: {"content-type": "application/json"},
+    });
+  };
 }

@@ -21,4 +21,8 @@ router.get("/detail/:id", controler.getRenderDetail);
 
 router.get("/delete/:id", controler.otherMethod);
 
+router.post("/submitForm", controler.postSubmitAddFormInfo);
+
+router.post("/editForm/:id", controler.editUserInfo);
+
 export {router};
