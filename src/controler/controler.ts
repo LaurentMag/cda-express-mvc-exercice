@@ -1,14 +1,9 @@
 import express, {Request, Response, NextFunction} from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 //
 import {UsersModel} from "../model/userModel";
 
-// MIDDLEWARE TO MANAGE FORM
-const app = express();
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(express.urlencoded({extended: false}));
-
+import {UserDefault} from "../dto/userType";
 // -----------------------------------------------------------
 // -----------------------------------------------------------
 export class ExoControler {
@@ -60,7 +55,11 @@ export class ExoControler {
   // SUBMITED DATA. DONT WORK HERE.. IN INDEX YES
   postSubmitAddFormInfo = (req: Request, res: Response) => {
     const {nom, prenom, ville} = req.body;
-    const newUserToAdd: any = {name: `${nom} ${prenom}`, address: {city: ville}};
+
+    const nomT: string = `${nom} ${prenom}`;
+
+    const defaultUser: UserDefault = new UserDefault(nomT, ville);
+    const newUserToAdd: UserDefault = defaultUser;
 
     this._usersModel.addUser(newUserToAdd);
 
@@ -71,9 +70,12 @@ export class ExoControler {
   editUserInfo = (req: Request, res: Response) => {
     const id: string = req.params.id;
     const {nom, prenom, ville} = req.body;
-    const dataToEdit: any = {id: id, name: `${nom} ${prenom}`, address: {city: ville}};
 
-    this._usersModel.updateUser(id, dataToEdit);
+    const nomT: string = `${nom} ${prenom}`;
+
+    const defaultUser: UserDefault = new UserDefault(nomT, ville);
+
+    this._usersModel.updateUser(id, defaultUser);
     res.redirect("/");
 
     // DEBUG

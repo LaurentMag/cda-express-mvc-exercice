@@ -10,6 +10,7 @@
                 <section class="card__container">
                     <% for ( let i=0; i < usersData.length; i++) { %>
                         <article class="card-frame">
+                            <img src=<%=usersData[i].photo %> alt="">
                             <p>
                                 <%= usersData[i].name %>
                             </p>

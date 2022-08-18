@@ -12,9 +12,14 @@ const port = process.env.PORT;
 
 //middleWare
 app.use(express.json());
-app.use(bodyParser.json());
-app.use(express.urlencoded({extended: false}));
+// body parser is depresiated
+// app.use(bodyParser.json());
 
+// middleware to gather info from submit in url
+app.use(express.urlencoded());
+
+// both middleware need to be declared before the router, as its "started" before the router
+// and thoses
 app.use(router);
 
 // app.use(
